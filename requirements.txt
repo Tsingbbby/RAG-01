@@ -1,0 +1,28 @@
+# 核心依赖库
+mineru>=0.1.0
+transformers>=4.30.0
+faiss-gpu>=1.7.4
+tqdm>=4.65.0
+numpy>=1.24.0
+pandas>=2.0.0
+
+# PDF处理
+PyPDF2>=3.0.0
+
+# Jupyter支持
+jupyter>=1.0.0
+ipykernel>=6.0.0
+
+# 数据处理
+json5>=0.9.0
+pathlib2>=2.3.0
+
+# 其他工具库
+requests>=2.31.0
+click>=8.0.0
+colorama>=0.4.0
+
+# 开发工具（可选）
+black>=23.0.0
+flake8>=6.0.0
+pytest>=7.0.0
