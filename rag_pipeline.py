@@ -115,15 +115,27 @@ class RAGPipeline:
             for i, (idx, distance) in enumerate(zip(indices[0], distances[0])):
                 if idx < len(self.metadata):
                     doc = self.metadata[idx]
-                    contexts.append(doc['original_content'])
+                    # 处理嵌套的metadata结构
+                    if 'metadata' in doc:
+                        metadata = doc['metadata']
+                        content = metadata.get('original_content') or metadata.get('content', '')
+                        filename = metadata.get('source_filename') or metadata.get('source', '')
+                        page = metadata.get('source_page_number', 0)
+                    else:
+                        # 兼容扁平结构
+                        content = doc.get('original_content') or doc.get('content', '')
+                        filename = doc.get('source_filename') or doc.get('source', '')
+                        page = doc.get('source_page_number', 0)
+                    
+                    contexts.append(content)
                     retrieved_docs.append({
                         'index': idx,
                         'distance': float(distance),
-                        'filename': doc.get('source_filename', ''),
-                        'page': doc.get('source_page_number', 0),
-                        'content_preview': doc['original_content'][:100] + '...' if len(doc['original_content']) > 100 else doc['original_content']
+                        'filename': filename,
+                        'page': page,
+                        'content_preview': content[:100] + '...' if len(content) > 100 else content
                     })
-                    print(f"  文档{i+1}: {doc.get('source_filename', 'Unknown')} (页码: {doc.get('source_page_number', 'N/A')}, 距离: {distance:.4f})")
+                    print(f"  文档{i+1}: {filename or 'Unknown'} (页码: {page or 'N/A'}, 距离: {distance:.4f})")
             
             if not contexts:
                 return {
@@ -153,7 +165,8 @@ class RAGPipeline:
             result = {
                 "answer": answer,
                 "filename": primary_source.get('filename', ''),
-                "page": primary_source.get('page', 0)
+                "page": primary_source.get('page', 0),
+                "sources": retrieved_docs  # 添加完整的sources字段
             }
             
             print("✓ 问答完成！\n")
@@ -164,7 +177,8 @@ class RAGPipeline:
             return {
                 "answer": f"抱歉，处理您的问题时发生错误: {str(e)}",
                 "filename": "",
-                "page": 0
+                "page": 0,
+                "sources": []  # 添加空的sources字段
             }
     
     def _build_prompt(self, question: str, context: str) -> str:
