@@ -1,0 +1,942 @@
+[
+  {
+    "id": 1,
+    "filename": "xx.pdf",
+    "page": 1,
+    "question": "广联达在苏中建设集团南宁龙湖春江天越项目中，具体运用了哪些BIM技术，并取得了哪些成果？",
+    "expected_answer": "广联达在苏中建设集团南宁龙湖春江天越项目中，具体运用了哪些BIM技术，并取得了哪些成果？",
+    "rag_answer": "根据提供的信息，无法回答该问题。",
+    "sources": [
+      {
+        "index": 2,
+        "distance": 1.2389349937438965,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是一个示例图片的描述，展示了某个重要的概念或数据可视化结果。"
+      },
+      {
+        "index": 4,
+        "distance": 1.3326849937438965,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "另一个文档的内容，用于测试多文档处理能力。"
+      },
+      {
+        "index": 6,
+        "distance": 1.3396525382995605,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "产品展示图：显示了各种产品的外观和特征。"
+      },
+      {
+        "index": 3,
+        "distance": 1.4204951524734497,
+        "filename": "test_document.pdf",
+        "page": 2,
+        "content_preview": "第二页包含更多的文本内容。这些内容将被用来测试分块算法的效果。我们需要确保每个文本块都有合适的大小，既不会太长也不会太短。同时，重叠部分应该能够保持上下文的连贯性，这对于后续的检索任务非常重要。"
+      },
+      {
+        "index": 1,
+        "distance": 1.4316030740737915,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "| 列1 | 列2 | 列3 |\n|-----|-----|-----|\n| 数据1 | 数据2 | 数据3 |\n| 数据4 | 数据5 | 数据6 |"
+      }
+    ],
+    "processing_time": 0.9880802631378174,
+    "success": true
+  },
+  {
+    "id": 2,
+    "filename": "xx.pdf",
+    "page": 1,
+    "question": "广联达公司如何通过数字项目管理平台提升施工企业的数字化转型能力？",
+    "expected_answer": "广联达公司如何通过数字项目管理平台提升施工企业的数字化转型能力？",
+    "rag_answer": "根据提供的信息，无法回答该问题。",
+    "sources": [
+      {
+        "index": 4,
+        "distance": 1.2824265956878662,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "另一个文档的内容，用于测试多文档处理能力。"
+      },
+      {
+        "index": 2,
+        "distance": 1.3113350868225098,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是一个示例图片的描述，展示了某个重要的概念或数据可视化结果。"
+      },
+      {
+        "index": 6,
+        "distance": 1.3939666748046875,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "产品展示图：显示了各种产品的外观和特征。"
+      },
+      {
+        "index": 3,
+        "distance": 1.3979885578155518,
+        "filename": "test_document.pdf",
+        "page": 2,
+        "content_preview": "第二页包含更多的文本内容。这些内容将被用来测试分块算法的效果。我们需要确保每个文本块都有合适的大小，既不会太长也不会太短。同时，重叠部分应该能够保持上下文的连贯性，这对于后续的检索任务非常重要。"
+      },
+      {
+        "index": 0,
+        "distance": 1.4688787460327148,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是第一页的文本内容。它包含了一些基本的信息，用于测试文本分块功能。文本应该被分割成适当大小的块，每个块大约500个字符，并且有50个字符的重叠。这样可以确保信息的连续性和完整性。"
+      }
+    ],
+    "processing_time": 0.7841196060180664,
+    "success": true
+  },
+  {
+    "id": 3,
+    "filename": "xx.pdf",
+    "page": 1,
+    "question": "广联达公司的BIM技术在中国建筑业中的应用现状如何？",
+    "expected_answer": "广联达公司的BIM技术在中国建筑业中的应用现状如何？",
+    "rag_answer": "根据提供的信息，无法回答该问题。",
+    "sources": [
+      {
+        "index": 2,
+        "distance": 1.355435848236084,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是一个示例图片的描述，展示了某个重要的概念或数据可视化结果。"
+      },
+      {
+        "index": 6,
+        "distance": 1.388988971710205,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "产品展示图：显示了各种产品的外观和特征。"
+      },
+      {
+        "index": 4,
+        "distance": 1.41669499874115,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "另一个文档的内容，用于测试多文档处理能力。"
+      },
+      {
+        "index": 3,
+        "distance": 1.4323348999023438,
+        "filename": "test_document.pdf",
+        "page": 2,
+        "content_preview": "第二页包含更多的文本内容。这些内容将被用来测试分块算法的效果。我们需要确保每个文本块都有合适的大小，既不会太长也不会太短。同时，重叠部分应该能够保持上下文的连贯性，这对于后续的检索任务非常重要。"
+      },
+      {
+        "index": 5,
+        "distance": 1.4610352516174316,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "| 产品 | 价格 | 库存 |\n|------|------|------|\n| 产品A | 100元 | 50 |\n| 产品B | 200元 | 30 |"
+      }
+    ],
+    "processing_time": 0.6441583633422852,
+    "success": true
+  },
+  {
+    "id": 4,
+    "filename": "xx.pdf",
+    "page": 1,
+    "question": "广联达公司造价业务转型后的收入来源和增长情况如何？",
+    "expected_answer": "广联达公司造价业务转型后的收入来源和增长情况如何？",
+    "rag_answer": "根据提供的信息，无法回答该问题。",
+    "sources": [
+      {
+        "index": 2,
+        "distance": 1.3912502527236938,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是一个示例图片的描述，展示了某个重要的概念或数据可视化结果。"
+      },
+      {
+        "index": 6,
+        "distance": 1.427008867263794,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "产品展示图：显示了各种产品的外观和特征。"
+      },
+      {
+        "index": 4,
+        "distance": 1.457533359527588,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "另一个文档的内容，用于测试多文档处理能力。"
+      },
+      {
+        "index": 5,
+        "distance": 1.4779090881347656,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "| 产品 | 价格 | 库存 |\n|------|------|------|\n| 产品A | 100元 | 50 |\n| 产品B | 200元 | 30 |"
+      },
+      {
+        "index": 3,
+        "distance": 1.510260820388794,
+        "filename": "test_document.pdf",
+        "page": 2,
+        "content_preview": "第二页包含更多的文本内容。这些内容将被用来测试分块算法的效果。我们需要确保每个文本块都有合适的大小，既不会太长也不会太短。同时，重叠部分应该能够保持上下文的连贯性，这对于后续的检索任务非常重要。"
+      }
+    ],
+    "processing_time": 0.724726676940918,
+    "success": true
+  },
+  {
+    "id": 5,
+    "filename": "xx.pdf",
+    "page": 1,
+    "question": "广联达公司2022年上半年营业收入增长情况如何？",
+    "expected_answer": "广联达公司2022年上半年营业收入增长情况如何？",
+    "rag_answer": "根据提供的信息，无法回答该问题。",
+    "sources": [
+      {
+        "index": 3,
+        "distance": 1.3946083784103394,
+        "filename": "test_document.pdf",
+        "page": 2,
+        "content_preview": "第二页包含更多的文本内容。这些内容将被用来测试分块算法的效果。我们需要确保每个文本块都有合适的大小，既不会太长也不会太短。同时，重叠部分应该能够保持上下文的连贯性，这对于后续的检索任务非常重要。"
+      },
+      {
+        "index": 2,
+        "distance": 1.4131693840026855,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是一个示例图片的描述，展示了某个重要的概念或数据可视化结果。"
+      },
+      {
+        "index": 4,
+        "distance": 1.4467501640319824,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "另一个文档的内容，用于测试多文档处理能力。"
+      },
+      {
+        "index": 5,
+        "distance": 1.4510291814804077,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "| 产品 | 价格 | 库存 |\n|------|------|------|\n| 产品A | 100元 | 50 |\n| 产品B | 200元 | 30 |"
+      },
+      {
+        "index": 6,
+        "distance": 1.4575084447860718,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "产品展示图：显示了各种产品的外观和特征。"
+      }
+    ],
+    "processing_time": 0.7301456928253174,
+    "success": true
+  },
+  {
+    "id": 6,
+    "filename": "xx.pdf",
+    "page": 1,
+    "question": "广联达公司如何通过云转型和多元化业务布局实现业绩增长？",
+    "expected_answer": "广联达公司如何通过云转型和多元化业务布局实现业绩增长？",
+    "rag_answer": "根据提供的信息，无法回答该问题。",
+    "sources": [
+      {
+        "index": 4,
+        "distance": 1.3425081968307495,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "另一个文档的内容，用于测试多文档处理能力。"
+      },
+      {
+        "index": 3,
+        "distance": 1.352565050125122,
+        "filename": "test_document.pdf",
+        "page": 2,
+        "content_preview": "第二页包含更多的文本内容。这些内容将被用来测试分块算法的效果。我们需要确保每个文本块都有合适的大小，既不会太长也不会太短。同时，重叠部分应该能够保持上下文的连贯性，这对于后续的检索任务非常重要。"
+      },
+      {
+        "index": 6,
+        "distance": 1.3797101974487305,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "产品展示图：显示了各种产品的外观和特征。"
+      },
+      {
+        "index": 2,
+        "distance": 1.4008870124816895,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是一个示例图片的描述，展示了某个重要的概念或数据可视化结果。"
+      },
+      {
+        "index": 5,
+        "distance": 1.4935871362686157,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "| 产品 | 价格 | 库存 |\n|------|------|------|\n| 产品A | 100元 | 50 |\n| 产品B | 200元 | 30 |"
+      }
+    ],
+    "processing_time": 0.5245864391326904,
+    "success": true
+  },
+  {
+    "id": 7,
+    "filename": "xx.pdf",
+    "page": 1,
+    "question": "广联达公司的BIM+智慧工地解决方案在哪些方面取得了显著进展？",
+    "expected_answer": "广联达公司的BIM+智慧工地解决方案在哪些方面取得了显著进展？",
+    "rag_answer": "根据提供的信息，无法回答该问题。",
+    "sources": [
+      {
+        "index": 2,
+        "distance": 1.3001866340637207,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是一个示例图片的描述，展示了某个重要的概念或数据可视化结果。"
+      },
+      {
+        "index": 4,
+        "distance": 1.3815507888793945,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "另一个文档的内容，用于测试多文档处理能力。"
+      },
+      {
+        "index": 6,
+        "distance": 1.3938755989074707,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "产品展示图：显示了各种产品的外观和特征。"
+      },
+      {
+        "index": 3,
+        "distance": 1.453467845916748,
+        "filename": "test_document.pdf",
+        "page": 2,
+        "content_preview": "第二页包含更多的文本内容。这些内容将被用来测试分块算法的效果。我们需要确保每个文本块都有合适的大小，既不会太长也不会太短。同时，重叠部分应该能够保持上下文的连贯性，这对于后续的检索任务非常重要。"
+      },
+      {
+        "index": 5,
+        "distance": 1.5112147331237793,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "| 产品 | 价格 | 库存 |\n|------|------|------|\n| 产品A | 100元 | 50 |\n| 产品B | 200元 | 30 |"
+      }
+    ],
+    "processing_time": 1.2760212421417236,
+    "success": true
+  },
+  {
+    "id": 8,
+    "filename": "xx.pdf",
+    "page": 1,
+    "question": "广联达公司如何通过项企一体化解决方案实现企业级多项目管理？",
+    "expected_answer": "广联达公司如何通过项企一体化解决方案实现企业级多项目管理？",
+    "rag_answer": "根据提供的信息，无法回答该问题。",
+    "sources": [
+      {
+        "index": 4,
+        "distance": 1.1524295806884766,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "另一个文档的内容，用于测试多文档处理能力。"
+      },
+      {
+        "index": 2,
+        "distance": 1.3055064678192139,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是一个示例图片的描述，展示了某个重要的概念或数据可视化结果。"
+      },
+      {
+        "index": 6,
+        "distance": 1.306276559829712,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "产品展示图：显示了各种产品的外观和特征。"
+      },
+      {
+        "index": 3,
+        "distance": 1.3794283866882324,
+        "filename": "test_document.pdf",
+        "page": 2,
+        "content_preview": "第二页包含更多的文本内容。这些内容将被用来测试分块算法的效果。我们需要确保每个文本块都有合适的大小，既不会太长也不会太短。同时，重叠部分应该能够保持上下文的连贯性，这对于后续的检索任务非常重要。"
+      },
+      {
+        "index": 1,
+        "distance": 1.4048887491226196,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "| 列1 | 列2 | 列3 |\n|-----|-----|-----|\n| 数据1 | 数据2 | 数据3 |\n| 数据4 | 数据5 | 数据6 |"
+      }
+    ],
+    "processing_time": 1.0220279693603516,
+    "success": true
+  },
+  {
+    "id": 9,
+    "filename": "xx.pdf",
+    "page": 1,
+    "question": "广联达公司的数字项目集成管理平台如何助力施工企业的数字化管理？",
+    "expected_answer": "广联达公司的数字项目集成管理平台如何助力施工企业的数字化管理？",
+    "rag_answer": "根据提供的信息，无法回答该问题。",
+    "sources": [
+      {
+        "index": 4,
+        "distance": 1.2568804025650024,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "另一个文档的内容，用于测试多文档处理能力。"
+      },
+      {
+        "index": 2,
+        "distance": 1.269638180732727,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是一个示例图片的描述，展示了某个重要的概念或数据可视化结果。"
+      },
+      {
+        "index": 6,
+        "distance": 1.34177827835083,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "产品展示图：显示了各种产品的外观和特征。"
+      },
+      {
+        "index": 3,
+        "distance": 1.3719193935394287,
+        "filename": "test_document.pdf",
+        "page": 2,
+        "content_preview": "第二页包含更多的文本内容。这些内容将被用来测试分块算法的效果。我们需要确保每个文本块都有合适的大小，既不会太长也不会太短。同时，重叠部分应该能够保持上下文的连贯性，这对于后续的检索任务非常重要。"
+      },
+      {
+        "index": 0,
+        "distance": 1.4304693937301636,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是第一页的文本内容。它包含了一些基本的信息，用于测试文本分块功能。文本应该被分割成适当大小的块，每个块大约500个字符，并且有50个字符的重叠。这样可以确保信息的连续性和完整性。"
+      }
+    ],
+    "processing_time": 0.7072999477386475,
+    "success": true
+  },
+  {
+    "id": 10,
+    "filename": "xx.pdf",
+    "page": 1,
+    "question": "广联达公司的数字项目集成管理平台总体架构如何？",
+    "expected_answer": "广联达公司的数字项目集成管理平台总体架构如何？",
+    "rag_answer": "根据提供的信息，无法回答该问题。",
+    "sources": [
+      {
+        "index": 4,
+        "distance": 1.2279760837554932,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "另一个文档的内容，用于测试多文档处理能力。"
+      },
+      {
+        "index": 2,
+        "distance": 1.2776440382003784,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是一个示例图片的描述，展示了某个重要的概念或数据可视化结果。"
+      },
+      {
+        "index": 3,
+        "distance": 1.315436840057373,
+        "filename": "test_document.pdf",
+        "page": 2,
+        "content_preview": "第二页包含更多的文本内容。这些内容将被用来测试分块算法的效果。我们需要确保每个文本块都有合适的大小，既不会太长也不会太短。同时，重叠部分应该能够保持上下文的连贯性，这对于后续的检索任务非常重要。"
+      },
+      {
+        "index": 6,
+        "distance": 1.3212023973464966,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "产品展示图：显示了各种产品的外观和特征。"
+      },
+      {
+        "index": 0,
+        "distance": 1.3529270887374878,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是第一页的文本内容。它包含了一些基本的信息，用于测试文本分块功能。文本应该被分割成适当大小的块，每个块大约500个字符，并且有50个字符的重叠。这样可以确保信息的连续性和完整性。"
+      }
+    ],
+    "processing_time": 1.1437664031982422,
+    "success": true
+  },
+  {
+    "id": 11,
+    "filename": "xx.pdf",
+    "page": 1,
+    "question": "广联达公司如何利用BIM技术推动其数字施工业务的发展？",
+    "expected_answer": "广联达公司如何利用BIM技术推动其数字施工业务的发展？",
+    "rag_answer": "根据提供的信息，无法回答该问题。",
+    "sources": [
+      {
+        "index": 2,
+        "distance": 1.3057345151901245,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是一个示例图片的描述，展示了某个重要的概念或数据可视化结果。"
+      },
+      {
+        "index": 4,
+        "distance": 1.34732985496521,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "另一个文档的内容，用于测试多文档处理能力。"
+      },
+      {
+        "index": 6,
+        "distance": 1.3866360187530518,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "产品展示图：显示了各种产品的外观和特征。"
+      },
+      {
+        "index": 3,
+        "distance": 1.4102168083190918,
+        "filename": "test_document.pdf",
+        "page": 2,
+        "content_preview": "第二页包含更多的文本内容。这些内容将被用来测试分块算法的效果。我们需要确保每个文本块都有合适的大小，既不会太长也不会太短。同时，重叠部分应该能够保持上下文的连贯性，这对于后续的检索任务非常重要。"
+      },
+      {
+        "index": 0,
+        "distance": 1.517272710800171,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是第一页的文本内容。它包含了一些基本的信息，用于测试文本分块功能。文本应该被分割成适当大小的块，每个块大约500个字符，并且有50个字符的重叠。这样可以确保信息的连续性和完整性。"
+      }
+    ],
+    "processing_time": 1.6089377403259277,
+    "success": true
+  },
+  {
+    "id": 12,
+    "filename": "xx.pdf",
+    "page": 1,
+    "question": "广联达公司如何通过BIM技术实现施工项目管理的整体解决方案？",
+    "expected_answer": "广联达公司如何通过BIM技术实现施工项目管理的整体解决方案？",
+    "rag_answer": "根据提供的信息，无法回答该问题。",
+    "sources": [
+      {
+        "index": 2,
+        "distance": 1.3167970180511475,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是一个示例图片的描述，展示了某个重要的概念或数据可视化结果。"
+      },
+      {
+        "index": 4,
+        "distance": 1.3243560791015625,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "另一个文档的内容，用于测试多文档处理能力。"
+      },
+      {
+        "index": 6,
+        "distance": 1.375427007675171,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "产品展示图：显示了各种产品的外观和特征。"
+      },
+      {
+        "index": 3,
+        "distance": 1.4590089321136475,
+        "filename": "test_document.pdf",
+        "page": 2,
+        "content_preview": "第二页包含更多的文本内容。这些内容将被用来测试分块算法的效果。我们需要确保每个文本块都有合适的大小，既不会太长也不会太短。同时，重叠部分应该能够保持上下文的连贯性，这对于后续的检索任务非常重要。"
+      },
+      {
+        "index": 1,
+        "distance": 1.499963641166687,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "| 列1 | 列2 | 列3 |\n|-----|-----|-----|\n| 数据1 | 数据2 | 数据3 |\n| 数据4 | 数据5 | 数据6 |"
+      }
+    ],
+    "processing_time": 0.58949875831604,
+    "success": true
+  },
+  {
+    "id": 13,
+    "filename": "xx.pdf",
+    "page": 1,
+    "question": "广联达公司BIM业务的发展趋势如何？",
+    "expected_answer": "广联达公司BIM业务的发展趋势如何？",
+    "rag_answer": "根据提供的信息，无法回答该问题。上下文信息中没有提到广联达公司或其BIM业务的发展趋势。",
+    "sources": [
+      {
+        "index": 6,
+        "distance": 1.3742550611495972,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "产品展示图：显示了各种产品的外观和特征。"
+      },
+      {
+        "index": 2,
+        "distance": 1.3890804052352905,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是一个示例图片的描述，展示了某个重要的概念或数据可视化结果。"
+      },
+      {
+        "index": 4,
+        "distance": 1.4119391441345215,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "另一个文档的内容，用于测试多文档处理能力。"
+      },
+      {
+        "index": 3,
+        "distance": 1.4363946914672852,
+        "filename": "test_document.pdf",
+        "page": 2,
+        "content_preview": "第二页包含更多的文本内容。这些内容将被用来测试分块算法的效果。我们需要确保每个文本块都有合适的大小，既不会太长也不会太短。同时，重叠部分应该能够保持上下文的连贯性，这对于后续的检索任务非常重要。"
+      },
+      {
+        "index": 5,
+        "distance": 1.458477258682251,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "| 产品 | 价格 | 库存 |\n|------|------|------|\n| 产品A | 100元 | 50 |\n| 产品B | 200元 | 30 |"
+      }
+    ],
+    "processing_time": 10.483206272125244,
+    "success": true
+  },
+  {
+    "id": 14,
+    "filename": "xx.pdf",
+    "page": 1,
+    "question": "广联达的施工建模设计软件 BIMMAKE 在哪些方面为施工企业提供了支持？",
+    "expected_answer": "广联达的施工建模设计软件 BIMMAKE 在哪些方面为施工企业提供了支持？",
+    "rag_answer": "根据提供的信息，无法回答该问题。",
+    "sources": [
+      {
+        "index": 2,
+        "distance": 1.1581133604049683,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是一个示例图片的描述，展示了某个重要的概念或数据可视化结果。"
+      },
+      {
+        "index": 4,
+        "distance": 1.1852610111236572,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "另一个文档的内容，用于测试多文档处理能力。"
+      },
+      {
+        "index": 6,
+        "distance": 1.235780119895935,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "产品展示图：显示了各种产品的外观和特征。"
+      },
+      {
+        "index": 3,
+        "distance": 1.3217469453811646,
+        "filename": "test_document.pdf",
+        "page": 2,
+        "content_preview": "第二页包含更多的文本内容。这些内容将被用来测试分块算法的效果。我们需要确保每个文本块都有合适的大小，既不会太长也不会太短。同时，重叠部分应该能够保持上下文的连贯性，这对于后续的检索任务非常重要。"
+      },
+      {
+        "index": 0,
+        "distance": 1.382910966873169,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是第一页的文本内容。它包含了一些基本的信息，用于测试文本分块功能。文本应该被分割成适当大小的块，每个块大约500个字符，并且有50个字符的重叠。这样可以确保信息的连续性和完整性。"
+      }
+    ],
+    "processing_time": 0.688004732131958,
+    "success": true
+  },
+  {
+    "id": 15,
+    "filename": "xx.pdf",
+    "page": 1,
+    "question": "广联达公司的BIMMAKE产品有哪些主要功能？",
+    "expected_answer": "广联达公司的BIMMAKE产品有哪些主要功能？",
+    "rag_answer": "根据提供的信息，无法回答该问题。上下文信息中没有提到广联达公司的BIMMAKE产品及其主要功能。",
+    "sources": [
+      {
+        "index": 6,
+        "distance": 1.2443126440048218,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "产品展示图：显示了各种产品的外观和特征。"
+      },
+      {
+        "index": 4,
+        "distance": 1.3183573484420776,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "另一个文档的内容，用于测试多文档处理能力。"
+      },
+      {
+        "index": 2,
+        "distance": 1.3228254318237305,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是一个示例图片的描述，展示了某个重要的概念或数据可视化结果。"
+      },
+      {
+        "index": 5,
+        "distance": 1.3450558185577393,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "| 产品 | 价格 | 库存 |\n|------|------|------|\n| 产品A | 100元 | 50 |\n| 产品B | 200元 | 30 |"
+      },
+      {
+        "index": 3,
+        "distance": 1.4144518375396729,
+        "filename": "test_document.pdf",
+        "page": 2,
+        "content_preview": "第二页包含更多的文本内容。这些内容将被用来测试分块算法的效果。我们需要确保每个文本块都有合适的大小，既不会太长也不会太短。同时，重叠部分应该能够保持上下文的连贯性，这对于后续的检索任务非常重要。"
+      }
+    ],
+    "processing_time": 1.7038609981536865,
+    "success": true
+  },
+  {
+    "id": 16,
+    "filename": "xx.pdf",
+    "page": 1,
+    "question": "广联达数维设计的产品有哪些主要特点？",
+    "expected_answer": "广联达数维设计的产品有哪些主要特点？",
+    "rag_answer": "根据提供的信息，无法回答该问题。上下文信息中没有提到广联达数维设计及其产品的主要特点。",
+    "sources": [
+      {
+        "index": 6,
+        "distance": 1.1206111907958984,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "产品展示图：显示了各种产品的外观和特征。"
+      },
+      {
+        "index": 2,
+        "distance": 1.2674108743667603,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是一个示例图片的描述，展示了某个重要的概念或数据可视化结果。"
+      },
+      {
+        "index": 3,
+        "distance": 1.329209566116333,
+        "filename": "test_document.pdf",
+        "page": 2,
+        "content_preview": "第二页包含更多的文本内容。这些内容将被用来测试分块算法的效果。我们需要确保每个文本块都有合适的大小，既不会太长也不会太短。同时，重叠部分应该能够保持上下文的连贯性，这对于后续的检索任务非常重要。"
+      },
+      {
+        "index": 5,
+        "distance": 1.3353694677352905,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "| 产品 | 价格 | 库存 |\n|------|------|------|\n| 产品A | 100元 | 50 |\n| 产品B | 200元 | 30 |"
+      },
+      {
+        "index": 4,
+        "distance": 1.337664008140564,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "另一个文档的内容，用于测试多文档处理能力。"
+      }
+    ],
+    "processing_time": 0.9609601497650146,
+    "success": true
+  },
+  {
+    "id": 17,
+    "filename": "xx.pdf",
+    "page": 1,
+    "question": "广联达公司如何通过收购鸿业科技完善其设计领域的布局？",
+    "expected_answer": "广联达公司如何通过收购鸿业科技完善其设计领域的布局？",
+    "rag_answer": "根据提供的信息，无法回答该问题。",
+    "sources": [
+      {
+        "index": 4,
+        "distance": 1.3586108684539795,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "另一个文档的内容，用于测试多文档处理能力。"
+      },
+      {
+        "index": 2,
+        "distance": 1.3677499294281006,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是一个示例图片的描述，展示了某个重要的概念或数据可视化结果。"
+      },
+      {
+        "index": 3,
+        "distance": 1.3855377435684204,
+        "filename": "test_document.pdf",
+        "page": 2,
+        "content_preview": "第二页包含更多的文本内容。这些内容将被用来测试分块算法的效果。我们需要确保每个文本块都有合适的大小，既不会太长也不会太短。同时，重叠部分应该能够保持上下文的连贯性，这对于后续的检索任务非常重要。"
+      },
+      {
+        "index": 6,
+        "distance": 1.3990297317504883,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "产品展示图：显示了各种产品的外观和特征。"
+      },
+      {
+        "index": 0,
+        "distance": 1.5411657094955444,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是第一页的文本内容。它包含了一些基本的信息，用于测试文本分块功能。文本应该被分割成适当大小的块，每个块大约500个字符，并且有50个字符的重叠。这样可以确保信息的连续性和完整性。"
+      }
+    ],
+    "processing_time": 1.0480949878692627,
+    "success": true
+  },
+  {
+    "id": 18,
+    "filename": "xx.pdf",
+    "page": 1,
+    "question": "广联达公司如何通过云转型推动其数字施工业务的发展？",
+    "expected_answer": "广联达公司如何通过云转型推动其数字施工业务的发展？",
+    "rag_answer": "根据提供的信息，无法回答该问题。",
+    "sources": [
+      {
+        "index": 2,
+        "distance": 1.3696284294128418,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是一个示例图片的描述，展示了某个重要的概念或数据可视化结果。"
+      },
+      {
+        "index": 4,
+        "distance": 1.3800022602081299,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "另一个文档的内容，用于测试多文档处理能力。"
+      },
+      {
+        "index": 3,
+        "distance": 1.4057703018188477,
+        "filename": "test_document.pdf",
+        "page": 2,
+        "content_preview": "第二页包含更多的文本内容。这些内容将被用来测试分块算法的效果。我们需要确保每个文本块都有合适的大小，既不会太长也不会太短。同时，重叠部分应该能够保持上下文的连贯性，这对于后续的检索任务非常重要。"
+      },
+      {
+        "index": 6,
+        "distance": 1.442247748374939,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "产品展示图：显示了各种产品的外观和特征。"
+      },
+      {
+        "index": 0,
+        "distance": 1.5283622741699219,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是第一页的文本内容。它包含了一些基本的信息，用于测试文本分块功能。文本应该被分割成适当大小的块，每个块大约500个字符，并且有50个字符的重叠。这样可以确保信息的连续性和完整性。"
+      }
+    ],
+    "processing_time": 1.0449440479278564,
+    "success": true
+  },
+  {
+    "id": 19,
+    "filename": "xx.pdf",
+    "page": 1,
+    "question": "广联达公司云转型后，净利润的变化趋势如何？",
+    "expected_answer": "广联达公司云转型后，净利润的变化趋势如何？",
+    "rag_answer": "根据提供的信息，无法回答该问题。",
+    "sources": [
+      {
+        "index": 2,
+        "distance": 1.3554420471191406,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是一个示例图片的描述，展示了某个重要的概念或数据可视化结果。"
+      },
+      {
+        "index": 5,
+        "distance": 1.3819655179977417,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "| 产品 | 价格 | 库存 |\n|------|------|------|\n| 产品A | 100元 | 50 |\n| 产品B | 200元 | 30 |"
+      },
+      {
+        "index": 3,
+        "distance": 1.4078173637390137,
+        "filename": "test_document.pdf",
+        "page": 2,
+        "content_preview": "第二页包含更多的文本内容。这些内容将被用来测试分块算法的效果。我们需要确保每个文本块都有合适的大小，既不会太长也不会太短。同时，重叠部分应该能够保持上下文的连贯性，这对于后续的检索任务非常重要。"
+      },
+      {
+        "index": 6,
+        "distance": 1.4250848293304443,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "产品展示图：显示了各种产品的外观和特征。"
+      },
+      {
+        "index": 4,
+        "distance": 1.4442259073257446,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "另一个文档的内容，用于测试多文档处理能力。"
+      }
+    ],
+    "processing_time": 0.6866357326507568,
+    "success": true
+  },
+  {
+    "id": 20,
+    "filename": "xx.pdf",
+    "page": 1,
+    "question": "根据华创证券发布的《机械行业深度研究报告》，胜科纳米作为半导体第三方检测分析实验室，其2024年的收入情况如何？",
+    "expected_answer": "根据华创证券发布的《机械行业深度研究报告》，胜科纳米作为半导体第三方检测分析实验室，其2024年的收入情况如何？",
+    "rag_answer": "根据提供的信息，无法回答该问题。上下文信息中没有提及华创证券发布的《机械行业深度研究报告》或胜科纳米的相关收入情况。",
+    "sources": [
+      {
+        "index": 4,
+        "distance": 1.2653025388717651,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "另一个文档的内容，用于测试多文档处理能力。"
+      },
+      {
+        "index": 3,
+        "distance": 1.3064863681793213,
+        "filename": "test_document.pdf",
+        "page": 2,
+        "content_preview": "第二页包含更多的文本内容。这些内容将被用来测试分块算法的效果。我们需要确保每个文本块都有合适的大小，既不会太长也不会太短。同时，重叠部分应该能够保持上下文的连贯性，这对于后续的检索任务非常重要。"
+      },
+      {
+        "index": 6,
+        "distance": 1.3364393711090088,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "产品展示图：显示了各种产品的外观和特征。"
+      },
+      {
+        "index": 2,
+        "distance": 1.338761568069458,
+        "filename": "test_document.pdf",
+        "page": 1,
+        "content_preview": "这是一个示例图片的描述，展示了某个重要的概念或数据可视化结果。"
+      },
+      {
+        "index": 5,
+        "distance": 1.4040277004241943,
+        "filename": "another_document.pdf",
+        "page": 1,
+        "content_preview": "| 产品 | 价格 | 库存 |\n|------|------|------|\n| 产品A | 100元 | 50 |\n| 产品B | 200元 | 30 |"
+      }
+    ],
+    "processing_time": 2.927872657775879,
+    "success": true
+  }
+]
