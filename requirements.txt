@@ -5,6 +5,10 @@ faiss-gpu>=1.7.4
 tqdm>=4.65.0
 numpy>=1.24.0
 pandas>=2.0.0
+torch>=2.0.0
+sentence-transformers>=2.2.0
+langchain>=0.1.0
+langchain-text-splitters>=0.0.1
 
 # PDF处理
 PyPDF2>=3.0.0
