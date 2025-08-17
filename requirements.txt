@@ -1,12 +1,8 @@
 # 核心依赖库
 mineru>=0.1.0
-transformers>=4.30.0
-faiss-gpu>=1.7.4
 tqdm>=4.65.0
 numpy>=1.24.0
 pandas>=2.0.0
-torch>=2.0.0
-sentence-transformers>=2.2.0
 langchain>=0.1.0
 langchain-text-splitters>=0.0.1
 
@@ -20,6 +16,10 @@ ipykernel>=6.0.0
 # 数据处理
 json5>=0.9.0
 pathlib2>=2.3.0
+
+# API客户端依赖
+python-dotenv>=1.0.0
+tenacity>=8.2.0
 
 # 其他工具库
 requests>=2.31.0

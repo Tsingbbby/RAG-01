@@ -16,7 +16,7 @@ import logging
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 # 导入自定义模块
-from embedding_module import EmbeddingModel
+from embedding_module import EmbeddingAPIClient
 
 # 配置日志
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -59,9 +59,9 @@ class ChunkAndEmbedPipeline:
             separators=["\n\n", "\n", "。", "！", "？", ";", ";", ".", "!", "?", " ", ""]
         )
         
-        # 初始化向量化模型
-        logger.info("正在初始化向量化模型...")
-        self.embedding_model = EmbeddingModel(batch_size=batch_size)
+        # 初始化向量化API客户端
+        logger.info("正在初始化向量化API客户端...")
+        self.embedding_model = EmbeddingAPIClient()
         
         # 确保输出目录存在
         os.makedirs(os.path.dirname(output_file), exist_ok=True)

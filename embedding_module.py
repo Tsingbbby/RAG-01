@@ -1,153 +1,123 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-向量化模块 - 使用BAAI/bge-m3模型进行文本向量化
-
-该模块提供了一个统一的接口来加载和使用bge-m3模型，
-支持批量处理以优化GPU利用率。
-"""
-
-import torch
-from transformers import AutoTokenizer, AutoModel
+import os
+import requests
+import json
 from typing import List
-import logging
+from dotenv import load_dotenv
+from tenacity import retry, stop_after_attempt, wait_exponential
 
-# 配置日志
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
-
-class EmbeddingModel:
+class EmbeddingAPIClient:
     """
-    BAAI/bge-m3 向量化模型封装类
-    
-    该类负责加载bge-m3模型并提供批量向量化功能。
-    模型会自动检测并使用可用的GPU设备。
+    通用向量化API客户端，支持与OpenAI v1/embeddings兼容的API服务
+    包括硅基流动、Xinference等服务
     """
     
-    def __init__(self, model_name: str = "BAAI/bge-m3", batch_size: int = 32):
+    def __init__(self):
         """
-        初始化向量化模型
-        
-        Args:
-            model_name: 模型名称，默认为BAAI/bge-m3
-            batch_size: 批处理大小，默认为32
+        初始化API客户端，从.env文件加载配置
         """
-        self.model_name = model_name
-        self.batch_size = batch_size
+        # 加载环境变量
+        load_dotenv()
         
-        # 检测设备
-        self.device = self._detect_device()
-        logger.info(f"使用设备: {self.device}")
+        # 读取配置
+        self.api_key = os.getenv('LOCAL_API_KEY')
+        self.base_url = os.getenv('LOCAL_BASE_URL')
+        self.model_name = os.getenv('LOCAL_EMBEDDING_MODEL')
         
-        # 加载模型和tokenizer
-        logger.info(f"正在加载模型: {model_name}")
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
-        self.model = AutoModel.from_pretrained(model_name)
-        self.model.to(self.device)
-        self.model.eval()  # 设置为评估模式
+        # 配置校验
+        if not self.base_url:
+            raise ValueError("LOCAL_BASE_URL 环境变量未设置，请检查.env文件")
+        if not self.model_name:
+            raise ValueError("LOCAL_EMBEDDING_MODEL 环境变量未设置，请检查.env文件")
         
-        logger.info("模型加载完成")
+        # 构建完整的端点URL
+        self.endpoint_url = f"{self.base_url.rstrip('/')}/v1/embeddings"
+        
+        # 初始化可复用的session
+        self.session = requests.Session()
+        
+        # 设置请求头
+        self.headers = {
+            'Content-Type': 'application/json'
+        }
+        if self.api_key:
+            self.headers['Authorization'] = f'Bearer {self.api_key}'
     
-    def _detect_device(self) -> str:
-        """
-        检测可用的计算设备
-        
-        Returns:
-            设备字符串 ('cuda' 或 'cpu')
-        """
-        if torch.cuda.is_available():
-            return "cuda"
-        elif torch.backends.mps.is_available():  # Apple Silicon GPU
-            return "mps"
-        else:
-            return "cpu"
-    
+    @retry(
+        stop=stop_after_attempt(3),
+        wait=wait_exponential(multiplier=1, min=4, max=10)
+    )
     def embed(self, texts: List[str]) -> List[List[float]]:
         """
-        批量生成文本向量
+        对文本列表进行向量化
         
         Args:
             texts: 待向量化的文本列表
             
         Returns:
             向量列表，每个向量为float列表
+            
+        Raises:
+            requests.RequestException: API请求失败
+            ValueError: 响应格式错误
         """
         if not texts:
             return []
         
-        all_embeddings = []
+        # 构建请求体
+        payload = {
+            'input': texts,
+            'model': self.model_name
+        }
         
-        # 分批处理
-        for i in range(0, len(texts), self.batch_size):
-            batch_texts = texts[i:i + self.batch_size]
-            batch_embeddings = self._embed_batch(batch_texts)
-            all_embeddings.extend(batch_embeddings)
-            
-            if (i // self.batch_size + 1) % 10 == 0:
-                logger.info(f"已处理 {i + len(batch_texts)}/{len(texts)} 个文本")
-        
-        logger.info(f"向量化完成，共生成 {len(all_embeddings)} 个向量")
-        return all_embeddings
-    
-    def _embed_batch(self, texts: List[str]) -> List[List[float]]:
-        """
-        处理单个批次的文本向量化
-        
-        Args:
-            texts: 批次文本列表
-            
-        Returns:
-            批次向量列表
-        """
-        with torch.no_grad():
-            # 编码文本
-            encoded = self.tokenizer(
-                texts,
-                padding=True,
-                truncation=True,
-                max_length=512,
-                return_tensors="pt"
+        try:
+            # 发送API请求
+            response = self.session.post(
+                self.endpoint_url,
+                headers=self.headers,
+                json=payload,
+                timeout=30
             )
             
-            # 移动到设备
-            encoded = {k: v.to(self.device) for k, v in encoded.items()}
+            # 检查响应状态
+            response.raise_for_status()
             
-            # 获取模型输出
-            outputs = self.model(**encoded)
+            # 解析响应
+            result = response.json()
             
-            # 使用CLS token的输出作为句子向量
-            embeddings = outputs.last_hidden_state[:, 0, :]
+            # 提取向量数据
+            if 'data' not in result:
+                raise ValueError(f"API响应格式错误：缺少'data'字段。响应内容：{result}")
             
-            # 归一化
-            embeddings = torch.nn.functional.normalize(embeddings, p=2, dim=1)
+            embeddings = []
+            for item in result['data']:
+                if 'embedding' not in item:
+                    raise ValueError(f"API响应格式错误：缺少'embedding'字段。项目内容：{item}")
+                embeddings.append(item['embedding'])
             
-            # 转换为CPU并转为列表
-            embeddings = embeddings.cpu().numpy().tolist()
+            return embeddings
             
-        return embeddings
+        except requests.exceptions.RequestException as e:
+            print(f"API请求失败: {e}")
+            raise
+        except (KeyError, ValueError) as e:
+            print(f"响应解析失败: {e}")
+            raise
     
     def get_embedding_dimension(self) -> int:
         """
-        获取向量维度
+        获取向量维度（通过发送单个测试文本）
         
         Returns:
             向量维度
         """
-        return self.model.config.hidden_size
-
-# 测试代码
-if __name__ == "__main__":
-    # 简单测试
-    embedding_model = EmbeddingModel()
+        test_embedding = self.embed(["test"])
+        if test_embedding:
+            return len(test_embedding[0])
+        return 0
     
-    test_texts = [
-        "这是一个测试文本。",
-        "This is another test sentence.",
-        "向量化模型测试中..."
-    ]
-    
-    embeddings = embedding_model.embed(test_texts)
-    
-    print(f"生成了 {len(embeddings)} 个向量")
-    print(f"向量维度: {len(embeddings[0])}")
-    print(f"第一个向量的前5个值: {embeddings[0][:5]}")
+    def __del__(self):
+        """
+        清理资源
+        """
+        if hasattr(self, 'session'):
+            self.session.close()
